@@ -1,0 +1,5 @@
+body { background: #f8f9fa; }
+button { background: #2c3e50; color: white; border: none; cursor: pointer; padding: 10px 20px; font-size: 18px; }
+button:hover { background: #1a252f; }
+input, select { width: 200px; }
+#resultat { font-weight: bold; }
