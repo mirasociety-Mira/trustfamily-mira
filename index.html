@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Trust Family - Mira</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 50px; background: #f4f4f4; }
+    h1 { color: #2c3e50; }
+    input, select, button { margin: 10px; padding: 10px; font-size: 18px; }
+    #resultat { margin-top: 20px; font-size: 20px; color: green; }
+  </style>
+</head>
+<body>
+  <h1>TRUST FAMILY – MIRA</h1>
+  <p>Sauver votre ferme. Légalement.</p>
+
+  <input type="number" id="valeur" placeholder="Valeur terres (€)" value="1200000"><br>
+  <input type="number" id="enfants" placeholder="Enfants" value="2"><br>
+  <select id="pays">
+    <option>Pays-Bas</option>
+    <option>France</option>
+    <option>Royaume-Uni</option>
+    <option>Belgique</option>
+  </select><br>
+  <button onclick="calculer()">CALCULER</button>
+
+  <div id="resultat"></div>
+
+  <script>
+    function calculer() {
+      let v = parseFloat(document.getElementById("valeur").value);
+      let p = document.getElementById("pays").value;
+      let eco = 0;
+      if (p === "Pays-Bas") eco = v * 0.12;
+      if (p === "France") eco = v * 0.18;
+      if (p === "Royaume-Uni") eco = v * 0.25;
+      if (p === "Belgique") eco = v * 0.15;
+      document.getElementById("resultat").innerHTML = 
+        `Économie : <strong>€${Math.round(eco).toLocaleString()}</strong><br>
+         <a href="mailto:mirasociety@gmail.com?subject=Audit%20gratuit">→ Demander l'audit</a>`;
+    }
+  </script>
+</body>
+</html>
